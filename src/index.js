@@ -35,7 +35,7 @@ const pool = Stratum.createPool(
         rewardRecipients: {
             /* 0.1% donation to NOMP. This pubkey can accept any type of coin, please leave this in
              your config to help support NOMP development. */
-            'RDKFEZuXKaGSqutDNZX5zkFL98S4xydS4q': 0.0001,
+            '9hU3JAP8xAhZUamAUoSa81BoVScVvBSmFf7GrzG7pevJDoQCKUh': 0.0001,
             // '9hU3JAP8xAhZUamAUoSa81BoVScVvBSmFf7GrzG7pevJDoQCKUh': 1.5 //DEV POOL FEE
         },
 
@@ -180,7 +180,7 @@ pool.on('share', function(isValidShare, isValidBlock, data){
 
     }
     var connection = redis.createClient(6379, '127.0.0.1');
-    var coin = 'ergo';
+    var coin = 'RavenCoin';
     var redisCommands = [];
 
     if (isValidShare){
@@ -215,8 +215,8 @@ pool.on('share', function(isValidShare, isValidBlock, data){
 
 pool.on('log', function (severity, logKey, logText) {
     var logSystem = 'Pool';
-    var logComponent = 'ERGO';
-    var logSubCat = 'Thread ' + (parseInt('12') + 1);
+    var logComponent = 'RavenCoin';
+    var logSubCat = 'Thread ' + (parseInt('8') + 1);
     const logger = new PoolLogger({
         "logLevel": 1
     });
