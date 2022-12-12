@@ -1,7 +1,7 @@
-import Stratum from "stratum-pool";
+const Stratum =require("stratum-pool");
 
-import * as redis from "redis";
-import {PoolLogger} from "./utils/logUtil.js";
+const redis = require("redis");
+const {PoolLogger} = require( "./utils/logUtil.js");
 
 const logger = new PoolLogger({
     "logLevel": 1
@@ -11,7 +11,7 @@ console.log("Hello World!");
 const myCoin = {
     name: 'RavenCoin',
     symbol: 'RVN',
-    algorithm: 'kawpow',
+    algorithm: 'sha256',
     reward: 'POW',
     /* Magic value only required for setting up p2p block notifications. It is found in the daemon
        source code as the pchMessageStart variable.
@@ -26,7 +26,7 @@ const pool = Stratum.createPool(
         coin: myCoin,
         extraNonce1Size: 1,
 
-        address: 'RDKFEZuXKaGSqutDNZX5zkFL98S4xydS4q', //Address to where block rewards are given
+        address: 'nexa:nqtsq5g585z3qnnzdpzxqy4uwsl2fsuztldrqak6r08sthfa', //Address to where block rewards are given
 
         /* Block rewards go to the configured pool wallet address to later be paid out to miners,
          except for a percentage that can go to, for examples, pool operator(s) as pool fees or
@@ -107,10 +107,10 @@ const pool = Stratum.createPool(
         daemons: [
             {
                 //Main daemon instance
-                host: '164.92.80.5',
-                port: 8888,
-                user: 'user1',
-                password: 'pass1',
+                host: '192.168.1.102',
+                port: 7227,
+                user: 'bob',
+                password: 'pass',
             },
         ],
 

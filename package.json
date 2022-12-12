@@ -12,6 +12,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
+    "@webpack-cli/generators": "^3.0.1",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
@@ -29,10 +30,11 @@
     "json-rpc2": "^2.0.0",
     "lodash": "^4.17.21",
     "logger": "^0.0.1",
-    "redis": "^4.2.0",
+    "moment": "^2.29.4",
+    "node-gyp": "^9.3.0",
+    "redis": "4.0.2",
     "stratum": "^0.2.4",
-    "stratum-pool": "github:Satoex/kawpow-stratum-pool",
+    "stratum-pool": "https://github.com/hainakus/nexa-stratum-pool.git",
     "stratum-solo": "0.0.1"
-  },
-  "type": "module"
+  }
 }

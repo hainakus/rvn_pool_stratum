@@ -1,4 +1,5 @@
-import dateFormat from "dateformat";
+
+const moment = require( "moment");
 
 
 var severityToColor = function (severity, text) {
@@ -22,7 +23,7 @@ var severityValues = {
 };
 
 
-export const PoolLogger = function (configuration) {
+ const PoolLogger = function (configuration) {
 
 
     var logLevelInt = severityValues[configuration.logLevel];
@@ -40,7 +41,7 @@ export const PoolLogger = function (configuration) {
             subcat = realSubCat;
         }
 
-        var entryDesc = dateFormat(new Date(), 'yyyy-mm-dd HH:MM:ss') + ' [' + system + ']\t';
+        var entryDesc = moment(new Date(), 'yyyy-mm-dd HH:MM:ss') + ' [' + system + ']\t';
         if (logColors) {
             entryDesc = severityToColor(severity, entryDesc);
 
@@ -74,4 +75,4 @@ export const PoolLogger = function (configuration) {
     });
 };
 
-
+module.exports = {PoolLogger}
